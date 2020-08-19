@@ -1,0 +1,10 @@
+*_TOKEN
+*.log
+.envrc
+.env
+.envrc-E
+*.tfstate
+*.tfstate.backup
+.terraform
+backend.hcl
+*.terragrunt-cache/

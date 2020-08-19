@@ -1,0 +1,6 @@
+source ../.envrc
+
+export TF_VAR_use_existing_do_ssh_key="true"
+export TF_VAR_do_ssh_key_name="devops-catalyst-systems"
+
+export KUBECONFIG=~/.kube/configs/devops-catalyst-qa.conf

@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+export TF_VAR_do_token="YOUR DIGITAL OCEAN ACCESS TOKEN WITH READ/WRITE"
+export TF_VAR_ssh_key_public_key_path="YOUR SSH KEY PUBLIC KEY PATH"
+
+export TF_VAR_use_existing_do_ssh_key="false"
+# If the above ssh key is already uploaded to DO, to reuse the that, set the TF_VAR_use_existing_do_ssh_key to true and give the name in TF_VAR_do_ssh_key_name
+# export TF_VAR_do_ssh_key_name=""
+
+export TF_VAR_grafana_admin_password="ADMIN PASSWORD FOR GRAFANA"
+export TF_VAR_jenkins_admin_password="ADMIN PASSWORD FOR JENKINS"
