@@ -1,5 +1,5 @@
 terraform {
-  source = "git::ssh://git@github.com/DevOpsByExample/terraform-modules.git//k8s?ref=master"
+  source = "git::ssh://git@github.com/DevOpsByExample/terraform-modules.git//k8s/digital_ocean?ref=master"
 }
 
 include {
