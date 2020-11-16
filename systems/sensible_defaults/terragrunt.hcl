@@ -17,4 +17,5 @@ dependency "k8s" {
 inputs = {
   kubeconfig_path = dependency.k8s.outputs.kubeconfig_path
   install_ci = true
+  install_nginx = true
 }

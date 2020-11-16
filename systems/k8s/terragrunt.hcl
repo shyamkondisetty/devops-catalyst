@@ -15,9 +15,6 @@ inputs = {
     region       = "blr1"
 
     addons = {
-      ingress      = {
-        enabled    = true
-      }
       ccm          = {
         enabled    = true
       }
