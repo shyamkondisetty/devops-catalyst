@@ -1,5 +1,5 @@
 terraform {
-  source = "git::ssh://git@github.com/DevOpsByExample/terraform-modules.git//k8s/digital_ocean?ref=master"
+  source = "git::ssh://git@github.com/twCatalyst/terraform-modules.git//k8s/digital_ocean?ref=master"
 }
 
 include {
@@ -8,16 +8,15 @@ include {
 
 inputs = {
   k8s_cluster = {
-    cluster_name = "devops-catalyst-systems"
-    pod_cidr     = "10.12.0.0/16"
-    service_cidr = "10.13.0.0/16"
+    cluster_name = "devops-catalyst-staging"
+    pod_cidr     = "10.22.0.0/16"
+    service_cidr = "10.23.0.0/16"
     vpc_uuid     = null
     region       = "blr1"
 
     addons = {
-      ccm          = {
-        enabled    = true
-      }
+      ingress      = null
+      ccm          = null
       external_dns = null
       cert_manager = null
       ebs          = null
@@ -31,7 +30,7 @@ inputs = {
     primary = [
       {
         user   = "root"
-        tags   = ["k8s","systems","primary"]
+        tags   = ["k8s","staging","primary"]
         image  = "ubuntu-18-04-x64"
         size   = "s-2vcpu-2gb"
         labels = []
@@ -41,7 +40,7 @@ inputs = {
     node_pools = [
       {
         count  = 2
-        name   = "systems-highcpu"
+        name   = "staging-highcpu"
         user   = "root"
         image  = "ubuntu-18-04-x64"
         size   = "s-4vcpu-8gb"
@@ -53,7 +52,7 @@ inputs = {
           },
           {
             name  = "env"
-            value = "systems"
+            value = "staging"
           },
         ]
       }
