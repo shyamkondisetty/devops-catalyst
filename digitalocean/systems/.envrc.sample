@@ -1,3 +1,0 @@
-source ../.envrc
-
-export KUBECONFIG=~/.kube/configs/devops-catalyst-systems.conf

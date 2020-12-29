@@ -5,3 +5,5 @@ export AWS_SECRET_ACCESS_KEY="YOUR AWS ACCESS KEY SECRET"
 
 export TF_VAR_grafana_admin_password="ADMIN PASSWORD FOR GRAFANA"
 export TF_VAR_jenkins_admin_password="ADMIN PASSWORD FOR JENKINS"
+
+export KUBECONFIG=~/.kube/configs/devops-catalyst-systems.conf

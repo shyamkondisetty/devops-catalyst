@@ -1,4 +1,4 @@
-# Devops Catalyst - DigitalOcean
+# Systems Kubernetes cluster
 
 ## Prerequisite
 
@@ -14,7 +14,7 @@
 ### DigitalOcean Setup
 
 1. Follow the instruction [here](https://www.digitalocean.com/docs/api/create-personal-access-token/) to setup personal token
-2. Create a ssh key for digital ocean in your machine. Refer [here](https://www.digitalocean.com/docs/droplets/how-to/add-ssh-keys/create-with-openssh/)
+2. Create a ssh key for the digital ocean in your machine. Refer [here](https://www.digitalocean.com/docs/droplets/how-to/add-ssh-keys/create-with-openssh/)
 
 
 ### Set environment variables
@@ -28,7 +28,7 @@ Populate the required environment variables in `.envrc`
 
 ### Setup terraform cloud
 
-1. Create an organization in app.terraform.io for this project
+1. Create an organization in the app.terraform.io for this project
 2. Do the following steps for `systems`
 - Create 2 workspaces "k8s" and "sensible_defaults" with prefix `systems` under this new organization in `app.terraform.io` 
 Example: `systems-k8s` & `systems-sensible_defaults`
@@ -65,7 +65,11 @@ terragrunt destroy-all
 
 ### To run individual modules
 ```sh
-cd systems/k8s
+cd k8s
+terragrunt plan
+terragrunt apply
+
+cd sensible_defaults
 terragrunt plan
 terragrunt apply
 ```

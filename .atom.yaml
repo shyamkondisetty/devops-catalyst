@@ -1,0 +1,27 @@
+name: k8s-cluster
+description: Create Kubernetes cluster with sensible defaults
+version: 0.0.1
+guides:
+- files:
+  - LICENSE.md
+  actions:
+    - rename:
+        pattern: infra/LICENSE.md
+        with: '{{.Input.name}}/LICENSE.md'
+    - rename:
+        pattern: k8s-cluster/LICENSE.md
+        with: '{{.Input.name}}/LICENSE.md'
+prompts:
+  - name: name
+    message: Name
+    default: systems
+  - name: organizationName
+    message: Organization Name
+    default: organization
+  - name: provider
+    message: Choose provider
+    default: aws
+    kind: select
+    choices:
+      - digitalocean
+      - aws

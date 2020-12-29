@@ -1,0 +1,24 @@
+name: aws-eks
+description: Create Kubernetes cluster with sensible defaults in aws
+version: 0.0.1
+guides:
+  - files:
+      - '*'
+    actions:
+      - replace:
+          pattern: (?i)systems
+          with: '{{.Input.name}}'
+      - replace:
+          pattern: k8s-cluster
+          with: '{{.Input.name}}'
+      - replace:
+          pattern: (?i)organization-name
+          with: '{{.Input.organizationName}}'
+      - rename:
+          pattern: aws-eks
+          with: '{{.Input.name}}'
+when:
+  all:
+    - input: '{{.Input.provider}}'
+      condition: '=='
+      value: aws
