@@ -10,14 +10,14 @@ guides:
           with: '{{.Input.name}}/LICENSE.md'
 prompts:
   - name: name
-    message: Name
+    message: Provide a name for the kubernetes cluster
     default: systems
   - name: organizationName
     message: Organization Name
     default: organization
   - name: provider
     message: Choose provider
-    default: aws
+    default: digitalocean
     kind: select
     choices:
       - digitalocean
