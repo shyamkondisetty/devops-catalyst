@@ -20,16 +20,13 @@
 ### Set environment variables
 ```
 cp .envrc.sample .envrc
-cp systems/.envrc.sample systems/.envrc
-cp qa/.envrc.sample qa/.envrc
-cp staging/.envrc.sample staging/.envrc
 ```
 Populate the required environment variables in `.envrc`
 
 ### Setup terraform cloud
 
 1. Create an organization in the app.terraform.io for this project
-2. Do the following steps for `systems`
+2. Do the following steps
 - Create 2 workspaces "k8s" and "sensible_defaults" with prefix `systems` under this new organization in `app.terraform.io` 
 Example: `systems-k8s` & `systems-sensible_defaults`
 - Set the execution mode to "local" for the above 2 workspaces
@@ -38,15 +35,11 @@ Example: `systems-k8s` & `systems-sensible_defaults`
 - Update the organization name in `systems/terragrunt.hcl` in the repo
 - Execute the plan as follows. There should not be any errors.
   ```shell
-  cd systems
   terragrunt plan-all
   ```
-3. Repeat the steps under #2 for `qa` and  `staging`
-
 
 ### Plan & Apply
 ```sh
-cd systems
 direnv allow . # only for the first time and whenever there is a change in .envrc
 terragrunt plan-all
 terragrunt apply-all
@@ -54,7 +47,6 @@ terragrunt apply-all
 
 ### Destroy
 ```sh
-cd systems
 terragrunt destroy-all
 ```
 
