@@ -3,6 +3,21 @@ description: Create Kubernetes cluster with sensible defaults in digital ocean
 version: 0.0.1
 guides:
   - files:
+      - '.envrc.sample'
+    actions:
+      - rename:
+          pattern: '.envrc.sample'
+          with: '.envrc'
+      - replace:
+          pattern: YOUR DIGITAL OCEAN ACCESS TOKEN WITH READ/WRITE
+          with: '{{.Input.doToken}}'
+      - replace:
+          pattern: ADMIN PASSWORD FOR GRAFANA
+          with: '{{.Input.grafanaAminPassword}}'
+      - replace:
+          pattern: ADMIN PASSWORD FOR JENKINS
+          with: '{{.Input.jenkinsAdminPassword}}'
+  - files:
       - '*'
     actions:
       - rename:
@@ -231,6 +246,15 @@ prompts:
       - so1_5-4vcpu-32gb
       - so1_5-8vcpu-64gb
     default: s-4vcpu-8gb
+  - name: doToken
+    message: Digitalocean token
+    kind: password
+  - name: grafanaAminPassword
+    message: Grafana admin password
+    kind: password
+  - name: jenkinsAdminPassword
+    message: Jenkins admin password
+    kind: password
 when:
   all:
     - input: '{{.Input.provider}}'
