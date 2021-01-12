@@ -23,6 +23,6 @@ inputs = {
   region = dependency.k8s.outputs.region
   cluster_name = dependency.k8s.outputs.cluster_name
   
-  install_ci = true
+  install_ci = false
   install_nginx = true
 }

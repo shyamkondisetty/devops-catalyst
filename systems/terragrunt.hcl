@@ -5,7 +5,7 @@ generate "backend" {
 terraform {
   backend "remote" {
     hostname = "app.terraform.io"
-    organization = "devops-catalyst-prabhu"
+    organization = "thoughtworks"
     workspaces {
       name = "systems-${path_relative_to_include()}"
     }

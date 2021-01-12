@@ -14,7 +14,6 @@ dependency "k8s" {
     cloud_provider = "dummy-cloud_provider"
     region = "dummy-region"
     cluster_name = "dummy-cluster-name"
-    cluster_autoscaler_role_arn = "dummy-autoscaler-role-arn"
   }
 }
 
@@ -23,9 +22,7 @@ inputs = {
   cloud_provider = dependency.k8s.outputs.cloud_provider
   region = dependency.k8s.outputs.region
   cluster_name = dependency.k8s.outputs.cluster_name
-  cluster_autoscaler_role_arn = dependency.k8s.outputs.cluster_autoscaler_role_arn
-
-  install_ci = true
+  
+  install_ci = false
   install_nginx = true
-  install_cluster_autoscaler_aws = true
 }

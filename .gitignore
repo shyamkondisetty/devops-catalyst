@@ -8,3 +8,4 @@
 .terraform
 backend.hcl
 *.terragrunt-cache/
+.idea
